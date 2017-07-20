@@ -10,11 +10,41 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <script src="./src/scripts/applications.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
   <app-root></app-root>
 </body>
+<script>
+$(window).scroll(function(){
+      if ($(window).scrollTop() < 132){
+      $("#navbarAXA").css("background","rgba(242, 241, 239, 0.02)");
+      $("#headerEle").css("color","rgba(255, 255, 255, 1)");
+      $("#headerEle2").css("color","rgba(255, 255, 255, 1)");
+      }
+      if ($(window).scrollTop() >= 132 && $(window).scrollTop() < 264){
+      $("#navbarAXA").css("background","rgba(242, 241, 239, 0.26)");
+      $("#headerEle").css("color","rgba(242, 242,242, 1)");
+      $("#headerEle2").css("color","rgba(242, 242,242, 1)");
+      }
+      if ($(window).scrollTop() >= 264 && $(window).scrollTop() < 369){
+       $("#navbarAXA").css("background","rgba(242, 241, 239, 0.51)");
+       $("#headerEle").css("color","rgba(192, 192, 192, 1)");
+       $("#headerEle2").css("color","rgba(192, 192, 192, 1)");
+      }      
+      if ($(window).scrollTop() >= 396 && $(window).scrollTop() < 528){
+       $("#navbarAXA").css("background","rgba(242, 241, 239, 0.76)");
+       $("#headerEle").css("color","rgba(128, 128, 128, 1)");
+       $("#headerEle2").css("color","rgba(128, 128, 128, 1)");
+      }      
+      if ($(window).scrollTop() >= 528){
+       $("#navbarAXA").css("background","rgba(242, 241, 239, 1)");
+       $("#headerEle").css("color","rgba(64, 64, 64, 1)");
+       $("#headerEle2").css("color","rgba(64, 64, 64, 1)");
+      }
+})
+
+function openNav(){document.getElementById("mySidenav").style.width="250px"} function closeNav(){document.getElementById("mySidenav").style.width="0"}
+</script>
 </html>

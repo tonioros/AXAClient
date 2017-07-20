@@ -1,23 +1,35 @@
+//Modulos
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from "@angular/http";
+import { FormsModule } from "@angular/forms";
 
-import { IndexComponent} from "./Componentes/Index/index.component"
+//Componentes
 import { AppComponent } from './app.component';
-
-import { RouterApp} from "./app.router"
-
-
+import { IndexComponent} from "./Componentes/Index/index.component"
+import { LoginComponent } from './Componentes/usuario/login/login.component'
+import { CookieModule } from "ngx-cookie";
+//Router
+import { RouterApp} from "./app.router";
+//Servicios
+import { UsuarioSevicioService } from "./Servicios/usuario-sevicio.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent
+    IndexComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    RouterApp
+    RouterApp,
+    HttpModule,
+    FormsModule,
+    CookieModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    UsuarioSevicioService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
