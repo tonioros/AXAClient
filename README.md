@@ -1,28 +1,27 @@
-# AxaControl
+# AXA Control 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.3.
+## Administrador: 
+1. CRUD Mecanicos
+2. Ver Clientes
+3. Ver Servicios | Por Calendario
+4. Ver Autos
+5. Perfil
+6. Ver Facturas
 
-## Development server
+## Mecanico:
+1. Agregar Ver y Eliminar Cliente | Ver solo sus clientes
+2. Sus Servicios (Ya Realizados)
+3. Ver sus comentarios (Solo los de el)
+4. Ver Facturas (Solo realizadas por el)
+5. Ver calendario de sus proximos servicios (Proximos a Realizar)
+6. Perfil
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Cliente:
+1. Agregar, ver y eliminar sus autos.
+2. Perfil
+3. Agendar nuevos servicios
+4. Ver servicios realizados y facturas
+5. Comentar algo de los mecanicos que ya le hicieron servicios
 
-## Code scaffolding
+### Toda el area del mecanico sera hecha en Angular y la de los clientes en IONIC
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
