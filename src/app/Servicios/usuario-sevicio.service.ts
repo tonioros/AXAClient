@@ -9,9 +9,11 @@ export class UsuarioSevicioService {
 
   constructor(private _http:Http, private _cookie:CookieService) { }
   autenticar(data:any, callback){
-    this._http.post("http://localhost:3000/autenticar", data).toPromise()
+    console.log(data);
+    
+    this._http.post("http://axaws.herokuapp.com/autenticar", data).toPromise()
     .then(res=>{
-      callback(res.json().Mensaje)
+      callback(res.json())
     })
     .catch(res=>{
       console.log(res);

@@ -13,12 +13,16 @@ import { CookieModule } from "ngx-cookie";
 import { RouterApp} from "./app.router";
 //Servicios
 import { UsuarioSevicioService } from "./Servicios/usuario-sevicio.service";
+import { IndexMecanicosComponent } from './Componentes/index-mecanicos/index-mecanicos.component';
+import { IndexAdministradorComponent } from './Componentes/index-administrador/index-administrador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
-    LoginComponent
+    LoginComponent,
+    IndexMecanicosComponent,
+    IndexAdministradorComponent
   ],
   imports: [
     BrowserModule,
