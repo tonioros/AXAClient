@@ -1,0 +1,31 @@
+.header-box{
+    background: url("../../../assets/header.png");
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 30em;       
+}
+.content-header{
+    padding: 9% 0px;
+}
+
+.content-header *{
+    margin: 25px 0px;
+}
+
+#header-title{
+    color: #fff;
+    font-size: 5em;
+    font-weight: 200;
+    text-align: center;
+    font-family: 'Josefin Sans';
+}
+#header-desc{
+    color: #fff;
+    font-size: 1.6em;
+    font-weight: 100;
+    text-align: center;
+    font-family: 'Josefin Sans';
+}

@@ -6,9 +6,10 @@ import { FormsModule } from "@angular/forms";
 
 //Componentes
 import { AppComponent } from './app.component';
-import { IndexComponent} from "./Componentes/Index/index.component"
-import { LoginComponent } from './Componentes/usuario/login/login.component'
+import { IndexComponent} from "./Componentes/Index/index.component";
+import { LoginComponent } from './Componentes/usuario/login/login.component';
 import { CookieModule } from "ngx-cookie";
+import { NavbarComponent } from "./Componentes/navbar/navbar.component";
 //Router
 import { RouterApp} from "./app.router";
 //Servicios
@@ -18,7 +19,8 @@ import { UsuarioSevicioService } from "./Servicios/usuario-sevicio.service";
   declarations: [
     AppComponent,
     IndexComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
