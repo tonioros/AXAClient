@@ -6,8 +6,10 @@ import { FormsModule } from "@angular/forms";
 
 //Componentes
 import { AppComponent } from './app.component';
-import { IndexComponent} from "./Componentes/Index/index.component"
-import { LoginComponent } from './Componentes/usuario/login/login.component'
+import { IndexComponent} from "./Componentes/Index/index.component";
+import { LoginComponent } from './Componentes/usuario/login/login.component';
+import { sTerminadoComponent } from './Componentes/index-mecanicos/sTerminado-mecanicos.component';
+import { SNuevoComponent } from './Componentes/index-mecanicos/sNuevo-mecanicos.component'
 import { CookieModule } from "ngx-cookie";
 //Router
 import { RouterApp} from "./app.router";
@@ -15,6 +17,7 @@ import { RouterApp} from "./app.router";
 import { UsuarioSevicioService } from "./Servicios/usuario-sevicio.service";
 import { IndexMecanicosComponent } from './Componentes/index-mecanicos/index-mecanicos.component';
 import { IndexAdministradorComponent } from './Componentes/index-administrador/index-administrador.component';
+import { MecanicoService } from './Servicios/mecanico-servicio.service'
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { IndexAdministradorComponent } from './Componentes/index-administrador/i
     IndexComponent,
     LoginComponent,
     IndexMecanicosComponent,
-    IndexAdministradorComponent
+    IndexAdministradorComponent,
+    SNuevoComponent,
+    sTerminadoComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,8 @@ import { IndexAdministradorComponent } from './Componentes/index-administrador/i
     CookieModule.forRoot()
   ],
   providers: [
-    UsuarioSevicioService
+    UsuarioSevicioService,
+    MecanicoService
   ],
   bootstrap: [AppComponent]
 })
