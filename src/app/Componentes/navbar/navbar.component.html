@@ -9,30 +9,32 @@
             </div>
         </div>
     </div>
-</nav> 
+</nav>
 <header class="header-box">
     <div class="content-header">
         <h1 id="header-title">AXA Control </h1>
         <h5 id="header-desc">Control y gestion de clientes, para talleres de mecanicas automotriz</h5>
     </div>
-        <div id="mySidenav" class="sidenav">
-            <div *ngIf="getEstado()">
-            <!-- Navbar logout -->
+    <div id="mySidenav" class="sidenav">
+        <div *ngIf="getEstado()">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="/" onclick="closeNav()">Inicio </a>
             <a [routerLink]="['autenticar']" onclick="closeNav()">Iniciar Sesion</a>
             <a onclick="closeNav()" [routerLink]="['sign']">Registrate</a>
-            </div>
+        </div>
 
-            <div *ngIf="!getEstado()">
-                <!-- Navbar login -->
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
-                <a onclick="closeNav()" >Categorias</a>
-                <a onclick="closeNav()">Contactos</a>
-                <a onclick="closeNav()">Tareas</a>
-                <a onclick="closeNav()">Citas</a>
-                <a onclick="closeNav()">Mi Perfil</a>
-                <a onclick="closeNav()">Cerrar Sesion</a>
+        <div *ngIf="!getEstado()">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a onclick="closeNav()">Mi Perfil</a>
+            <a onclick="closeNav()">Cerrar Sesion</a>
+            <div *ngIf="!diferencia()">
+                <a>Soy admin!</a>
+                <a>Que emocion :3</a>
+            </div>
+            <div *ngIf="diferencia()">
+                <a>Soy mecanico</a>
+                <a>Que hueva xD</a>
             </div>
         </div>
+    </div>
 </header>

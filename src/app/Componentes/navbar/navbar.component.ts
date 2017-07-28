@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class NavbarComponent implements OnInit {
-    public state= {out: true, in1:false}
+    public state= {out: true, in1:false};
+    public _diferencia = {out: true, in1:false};
     constructor() { }
 
     ngOnInit() { }
@@ -18,5 +19,14 @@ export class NavbarComponent implements OnInit {
             this.state.in1 = true;
         }
         return (this.state.out && !this.state.in1);
+    }
+
+    diferencia(){
+        if(localStorage.getItem("UROi") == "1"){
+            this._diferencia.in1 = true;
+            this._diferencia.out = false;
+        } else{
+            return (this._diferencia.out && !this._diferencia.in1);
+        }
     }
 }

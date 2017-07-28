@@ -25,7 +25,7 @@ export class RegistroComponent implements OnInit {
     agregarContacto(data: NgForm) {
         console.log(data);
         if (data.valid) {
-            this.newUser.insertContacto(data.value.nombre, data.value.edad, data.value.correo, data.value.contrasena, data.value.idTipoUsuario, idEmpresa, (value) => {
+            this.newUser.insertContacto(data.value.nombre, data.value.edad, data.value.correo, data.value.contrasena, data.value.idTipoUsuario, data.value.idEmpresa, (value) => {
                 if (value) {
                     setTimeout(() => {
                         this._router.navigate(["contactos"]);
