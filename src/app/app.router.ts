@@ -9,12 +9,13 @@ import { ClienteComponent } from "./Componentes/cliente/cliente.component";
 import { FacturaComponent } from "./Componentes/factura/factura.component";
 import { MecanicoComponent } from "./Componentes/mecanico/mecanico.component";
 import { RegistroComponent } from "./Componentes/usuario/registro/registro.component";
+import { mecanico_Route } from './Componentes/index-mecanicos/mecanicos.router';
 
 const APP_ROUTES:Routes = [
     { path: '', component: IndexComponent },
     { path: 'autenticar', component: LoginComponent },
     { path: 'sign', component: RegistroComponent },
-    { path: 'MEC', component: IndexMecanicosComponent },
+    { path: 'MEC', component: IndexMecanicosComponent, children: mecanico_Route },
     { path: 'ADM', component: IndexAdministradorComponent,
     children:[
         {path: "auto", component: AutoComponent},
