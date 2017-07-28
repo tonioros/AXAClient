@@ -1,0 +1,14 @@
+<div class="container" style="margin-top: 30px">
+    <div class="card-columns">
+  <div class="card" *ngFor="let variable of calendario" style="background: gray">
+    <div class="card-block">
+      <h4 class="card-title">{{ variable.fechaServicio }}</h4>
+      <span class="card-text label label-danger">{{"Cliente"+ variable.nombreUsuario}}</span>
+      <span class="card-text label label-warning">{{"Auto"+variable.modelo+"/"+variable.marca+"/"+variable.anio}}</span>
+      <span class="card-text label label-default">{{"IdServicio"+variable.idServicio}}</span>
+      <footer>
+      </footer>
+    </div>
+  </div>
+</div>
+</div>

@@ -32,8 +32,12 @@
                 <a>Que emocion :3</a>
             </div>
             <div *ngIf="diferencia()">
-                <a>Soy mecanico</a>
-                <a>Que hueva xD</a>
+        <a [routerLink]="['MEC/serviciosNuevos']" onclick="closeNav()">Servicios en espera</a>
+      
+        <a class="nav-link" [routerLink]="['MEC/serviciosTerminados']" onclick="closeNav()">Servicios terminados</a>
+      
+        <a class="nav-link" [routerLink]="['MEC/calendario']" onclick="closeNav()">Calendario</a>
+      
             </div>
         </div>
     </div>
