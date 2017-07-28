@@ -10,6 +10,7 @@ import { IndexComponent} from "./Componentes/Index/index.component";
 import { LoginComponent } from './Componentes/usuario/login/login.component';
 import { sTerminadoComponent } from './Componentes/index-mecanicos/sTerminado-mecanicos.component';
 import { SNuevoComponent } from './Componentes/index-mecanicos/sNuevo-mecanicos.component'
+import { CalendarioComponent } from './Componentes/index-mecanicos/calendario-mecanicos.component';
 import { CookieModule } from "ngx-cookie";
 import { NavbarComponent } from "./Componentes/navbar/navbar.component";
 import { IndexMecanicosComponent } from './Componentes/index-mecanicos/index-mecanicos.component';
@@ -40,7 +41,8 @@ import { MecanicoService } from './Servicios/mecanico-servicio.service'
     FacturaComponent,
     MecanicoComponent,
     SNuevoComponent,
-    sTerminadoComponent
+    sTerminadoComponent,
+    CalendarioComponent
   ],
   imports: [
     BrowserModule,
