@@ -1,0 +1,29 @@
+<h2>Registro</h2>
+<div *ngIf="_data_alert.show" class="alert {{_data_alert.state}}" role="alert">
+    <h3>{{_data_alert.titulo}}</h3> {{_data_alert.mensaje}}.
+</div>
+<div class="container">
+    <form class="from-signin" #data="ngForm" (ngSubmit)="agregarContacto(data)">
+        <div class="form-group">
+            <label>Nombre: </label>
+            <input type="text" ngModel name="nombre" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label>Edad: </label>
+            <input type="text" ngModel name="edad" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label>Correo: </label>
+            <input type="email" class="form-control" ngModel name="correo" required/>
+        </div>
+        <div class="form-group">
+            <label>Contraseña: </label>
+            <input type="password" class="form-control" ngModel name="contrasena" required/>
+        </div>
+        <div class="invisible">
+            <input type="text" ngModel name="idTipoUsuario" value="2" required/>
+            <input type="text" ngModel name="idEmpresa" value="{{idMyEmpresa}}" required/>
+        </div>
+        <button type="submit" class="btn btn-lg btn-success">Agregar </button>
+    </form>
+</div>

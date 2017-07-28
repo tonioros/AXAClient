@@ -16,23 +16,23 @@
         <h5 id="header-desc">Control y gestion de clientes, para talleres de mecanicas automotriz</h5>
     </div>
         <div id="mySidenav" class="sidenav">
-            <div >
+            <div *ngIf="getEstado()">
             <!-- Navbar logout -->
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a >Inicio</a>
-            <a>Iniciar Sesion</a>
-            <a>Registrate</a>
+            <a href="/" onclick="closeNav()">Inicio </a>
+            <a [routerLink]="['autenticar']" onclick="closeNav()">Iniciar Sesion</a>
+            <a onclick="closeNav()" [routerLink]="['sign']">Registrate</a>
             </div>
 
-            <div >
+            <div *ngIf="!getEstado()">
                 <!-- Navbar login -->
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
-                <a>Categorias</a>
-                <a>Contactos</a>
-                <a>Tareas</a>
-                <a>Citas</a>
-                <a>Mi Perfil</a>
-                <a>Cerrar Sesion</a>
+                <a onclick="closeNav()" >Categorias</a>
+                <a onclick="closeNav()">Contactos</a>
+                <a onclick="closeNav()">Tareas</a>
+                <a onclick="closeNav()">Citas</a>
+                <a onclick="closeNav()">Mi Perfil</a>
+                <a onclick="closeNav()">Cerrar Sesion</a>
             </div>
         </div>
 </header>
