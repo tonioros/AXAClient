@@ -29,7 +29,9 @@ export class MecanicoService {
   getServiciosNuevos(idMecanico){
     let uri2 = this.uriServicio+'mec/SF/'+ idMecanico;
     return this.http.get(uri2).map(res =>{
+      console.log(res.json());
       return res.json();
+      
     })
   }
 
@@ -41,7 +43,10 @@ export class MecanicoService {
   }
 
   getFactura(idServicio){
-    
+      let uri2 = this.uriFactura+'serv/'+idServicio;
+      return this.http.get(uri2).map(res =>{
+        return res.json();
+      })
   }
 
   addFactura(data){

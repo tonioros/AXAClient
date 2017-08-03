@@ -4,7 +4,7 @@
     <div class="col-lg-12">
         <div class="panel panel-info" style="height: 500px;margin: auto">
         <!-- Default panel contents -->
-        <div class="panel-heading">Servicios finalizados</div>
+        <div class="panel-heading">Servicios en curso</div>
           <p>...</p>
         <div class="panel-body">
             <!-- Table -->
@@ -14,7 +14,7 @@
                 <th>idServicio</th>
                 <th>fecha</th>
                 <th>Modelo/Marca/Anio</th>
-                <th>Usuario</th>
+                <th>Mecanico</th>
                 <th>Opciones</th>
               </tr>
             </thead>
@@ -75,6 +75,21 @@
 
                             
                         </div>
+                        <div class="row">
+                            <div class="col align-center">
+                                <form #formularioDetalle="ngForm" (ngSubmit)="agregarDetalle()">
+                                    <div class="form-group">
+                                        <label for="comentario">Descripcion</label>
+                                        <textarea type="text" class="form-control" id="comentario" name="comentario" [(ngModel)]="modelDetalle.descripcion"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="comentario">Precio</label>
+                                        <input type="number" class=" form-control" name="subtotal" [(ngModel)]="modelDetalle.subtotal"/>
+                                    </div>
+                                    <input type="submit" class="btn btn-primary" value="Agregar">
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -89,33 +104,31 @@
                                 <div class="panel-heading">
                                     <span class="glyphicon glyphicon-comment"></span> Comentario
                                 </div>
-                                <div class="panel-body">
-                                    <ul class="chat">
-                                        <li class="left clearfix"><span class="chat-img pull-left">
+                                <div class="panel-body" *ngFor="let variable of comentarios" style="height: 100px">
+                                    <ul class="chat" >
+                                        <li *ngIf="variable.idCliente != idMecanico" class="left clearfix"><span class="chat-img pull-left">
                                             <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
                                         </span>
                                             <div class="chat-body clearfix">
                                                 <div class="header">
-                                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-                                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+                                                    <strong class="primary-font">Cliente</strong> <small class="pull-right text-muted">
+                                                        <span class="glyphicon glyphicon-time"></span>{{variable.idComentario}}</small>
                                                 </div>
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                                    dolor, quis ullamcorper ligula sodales.
+                                                    {{variable.descripcion}}
                                                 </p>
                                             </div>
                                         </li>
-                                        <li class="right clearfix"><span class="chat-img pull-right">
+                                        <li *ngIf="variable.idCliente == idMecanico" class="right clearfix"><span class="chat-img pull-right">
                                             <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
                                         </span>
                                             <div class="chat-body clearfix">
                                                 <div class="header">
-                                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
-                                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>{{variable.idComentario}}</small>
+                                                    <strong class="pull-right primary-font">Yo</strong>
                                                 </div>
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                                    dolor, quis ullamcorper ligula sodales.
+                                                    {{variable.descripcion}}
                                                 </p>
                                             </div>
                                         </li>
@@ -124,9 +137,9 @@
                                 </div>
                                 <div class="panel-footer">
                                     <div class="input-group">
-                                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                                        <input id="btn-input" type="text" class="form-control input-sm" [(ngModel)]="modelComentario.descripcion" placeholder="Type your message here..." />
                                         <span class="input-group-btn">
-                                            <button class="btn btn-warning btn-sm" id="btn-chat">
+                                            <button class="btn btn-warning btn-sm" id="btn-chat" (click)="comentar()">
                                                 Send</button>
                                         </span>
                                     </div>

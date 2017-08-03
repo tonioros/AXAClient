@@ -14,7 +14,7 @@
                 <th>idServicio</th>
                 <th>fecha</th>
                 <th>Modelo/Marca/Anio</th>
-                <th>Usuario</th>
+                <th>Mecanico</th>
                 <th>Opciones</th>
               </tr>
             </thead>
@@ -48,7 +48,7 @@
                 <div class="container">
                     <div class="form-group">
                         <label for="cliente">Cliente:</label>
-                        <input type="text" class="form-control" value="Angel" id="cliente" disabled>
+                        <input type="text" class="form-control" [ngModel]="facturaBuscada.idUsuario" id="cliente" disabled>
                     </div>
                     <div class="row">
                         <div class="panel panel-primary" style="width: 450px;margin: auto">
@@ -77,7 +77,7 @@
                     </div>
                     <div class="form-group">
                         <label for="cliente">Total:</label> <span class="label label-default">Q</span>
-                        <input type="number" class="form-control" value="500" id="cliente" disabled>
+                        <input type="number" class="form-control" [ngModel]="facturaBuscada.total" id="cliente" disabled>
                     </div>
                 </div>
             </div>
@@ -93,32 +93,30 @@
                                     <span class="glyphicon glyphicon-comment"></span> Comentario
                                 </div>
                                 <div class="panel-body">
-                                    <ul class="chat">
-                                        <li class="left clearfix"><span class="chat-img pull-left">
+                                    <ul class="chat" *ngFor="let variable of comentarios">
+                                        <li *ngIf="variable.idCliente != idMecanico" class="left clearfix"><span class="chat-img pull-left">
                                             <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
                                         </span>
                                             <div class="chat-body clearfix">
                                                 <div class="header">
-                                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-                                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+                                                    <strong class="primary-font">Cliente</strong> <small class="pull-right text-muted">
+                                                        <span class="glyphicon glyphicon-time"></span>{{variable.idComentario}}</small>
                                                 </div>
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                                    dolor, quis ullamcorper ligula sodales.
+                                                    {{variable.descripcion}}
                                                 </p>
                                             </div>
                                         </li>
-                                        <li class="right clearfix"><span class="chat-img pull-right">
+                                        <li *ngIf="variable.idCliente == idMecanica" class="right clearfix"><span class="chat-img pull-right">
                                             <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
                                         </span>
                                             <div class="chat-body clearfix">
                                                 <div class="header">
-                                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
-                                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>{{variable.idComentario}}</small>
+                                                    <strong class="pull-right primary-font">Yo</strong>
                                                 </div>
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                                    dolor, quis ullamcorper ligula sodales.
+                                                    {{variable.descripcion}}
                                                 </p>
                                             </div>
                                         </li>
@@ -126,13 +124,7 @@
                                     </ul>
                                 </div>
                                 <div class="panel-footer">
-                                    <div class="input-group">
-                                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-warning btn-sm" id="btn-chat">
-                                                Send</button>
-                                        </span>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

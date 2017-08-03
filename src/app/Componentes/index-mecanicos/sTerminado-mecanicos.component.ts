@@ -9,7 +9,12 @@ import { MecanicoService } from '../../Servicios/mecanico-servicio.service'
 })
 export class sTerminadoComponent implements OnInit {
   servicios:any[] = [];
+  comentarios:any[] =[];
   detalleServicios:any[] = [];
+  facturaBuscada:any = {
+    idUsuario: 0,
+    total: 0
+  };
   idMecanico = localStorage.getItem('UDI');
   model:any = {
 
@@ -32,10 +37,14 @@ export class sTerminadoComponent implements OnInit {
       this.detalleServicios = res;
       console.log(res);
     });
-    /*this.service.getComentarios(this.model.idServicio).subscribe(res =>{
+    this.service.getComentarios(this.model.idServicio).subscribe(res =>{
+      this.comentarios = res;
       console.log(res);
     })
-    console.log(data);*/
+    this.service.getFactura(this.model.idServicio).subscribe(res =>{
+      this.facturaBuscada = res[0]
+    })
+    console.log(data);
   }
 
 }
